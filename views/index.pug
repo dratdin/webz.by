@@ -1,0 +1,226 @@
+doctype html
+html(lang="ru-Ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Создание сайтов Минск. Система скидок и поддержка!
+    meta(name="description" content="Разработка сайтов любой сложности. Наши цены гораздо ниже рыночных, а система скидок позволяет сэкономить вам еще больше денег. Создание сайтов с нуля, под ключ и их последующие продвижение")
+
+    link(rel="shortcut icon" href="public/img/five-icon.png" type="image/x-icon")
+    link(rel="stylesheet" href="libs/bootstrap-grid-3.3.1.min.css")
+    link(rel="stylesheet" href="public/css/app.css")
+  body
+    .Header.coverable
+      .hidden-sm.hidden-md.hidden-lg.Menu-btn.clearfix
+          .menu-btn
+      .Header__container.container
+        .Header__half
+          .Header__intro
+            .logo.separator WEBZ
+            h1.pageTitle разработка и создание<br /> сайтов в Минске
+            .hidden-sm.hidden-md.hidden-lg.MobileContacts
+              .mobileContacts +375 (33) 333 24 47
+              .mobileContacts webz.sites.by@gmail.com
+            .Header__coverCheck.coverCheck
+              .coverCheck__item Дешевле
+              .coverCheck__item Качественнее
+              .coverCheck__item Надежнее
+        .Header__half
+          nav.Header__Menu.Menu
+            ul.menu
+              li.menu__item
+                a.menu__lnk(href="#price") ЦЕНЫ
+              li.menu__item
+                a.menu__lnk(href="#portfolio") ПОРТФОЛИО
+              li.menu__item.menu__item_new
+                a.menu__lnk(href="#discounts") СКИДКИ
+              li.menu__item
+                a.menu__lnk(href="#testimonials") ОТЗЫВЫ
+          form.Header__form.form
+            input.form__field(type="text" name="name" placeholder="ВАШЕ ИМЯ" required)
+            input.form__field(type="text" name="phone" placeholder="ВАШ НОМЕР ТЕЛЕФОНА" required)
+            input.form__field(type="text" name="email" placeholder="ВАШ E-MAIL" required)
+            button.form__btn.btn.btn_wp(type="submit" name="mail-request") ОСТАВИТЬ ЗАЯВКУ
+          .Header__contacts.contacts
+            .contacts__group
+              a.contacts__item(href="tel:+375333332447") +375 (33) 333 24 47
+              a.contacts__item(href="tel:+375336756847") +375 (33) 675 68 47
+            .contacts__group
+              a.contacts__item(href="mailto:webz.sites.by@gmail.com") webz.sites.by@gmail.com
+    -
+     var bonuses = [
+        {title: 'Исследование вашего рынка и конкурентов', img_src: 'public/img/laptop.png', text: 'При создании сайта мы учитываем все факторы вашего рынка: сезонность, главные потребности клиента, наиболее популярные ключевые слова при поиске, чтобы сайт изначально был готов к дальнейшему продвижению'},
+        {title: 'Уникальный, адаптивный дизайн', img_src: 'public/img/editor.png', text: 'Это то что выделит вас и сделает клиента более дружелюбным к вам. Дизайн – это не просто красивая картинка, а это то что помогает расположить к вам клиента.'},
+        {title: 'Поддержка', img_src: 'public/img/responsive.png', text: 'Любое внесение поправок на сайт, которые не затрагивают оговоренный функционал, обойдутся вам совершенно бесплатно, если что-то вдруг окажется не красивым или перестанет работать - мы обязуемся исправить в кротчайшие сроки.'}]
+    section.section.bonuses
+      h2.title.Fblack.align-center.container Что вы получаете заказывая<br /> создание сайта у нас
+      ul.bonuses__list
+        each bonus in bonuses
+          li.infoCard
+            img.infoCard__img(src=bonus.img_src alt=bonus.title)
+            .infoCard__title= bonus.title
+            .infoCard__text.text= bonus.text
+
+    -
+     var products = [
+        {title: 'Landing Page', info: 'Это одностраничный сайт (так называемая посадочная страница), предназначенный для продажи одного товара или услуги. Преимуществом такого сайта является то, что он максимально раскрывает ваше уникальное торговое предложение. У лэндингов максимальная конверсия (зашел - оставил заявку). Вместе с разработкой лендинга мы БЕСПЛАТНО настраиваем контекстную рекламу', img_src: 'public/img/landing.svg', cost: 'от 120$'},
+        {title: 'Сайт-визитка', info: 'Это небольшой сайт, чаще всего до 5 страниц. Содержащий основную информацию о компании, услуге, товаре. С прайс листами и контактной информацией. Как и все остальные сайты, сайты-визитки мы разрабатываем только с индивидуальным дизайном, что позволит даже по маленькому сайту выделить Вас среди конкурентов.', img_src: 'public/img/visit-card.png', cost: 'от 120$'},
+        {title: 'Корпоративный сайт', info: 'Это большой полнофункциональный сайт, задачей которого является заявить о компании в интернете. Мы стараемся чтобы каждый сделанный нами сайт максимально точно раскрывал потенциал компании и повышал ее статус.', img_src: 'public/img/team.png', cost: 'от 300$'},
+        {title: 'Интернет-магазин', info: 'Сайт с помощью которого Вы сможете продавать свои услуги и продукцию в интернете. Он продаёт Вашу продукцию 24/7. Обратитесь к нам и мы разработаем Вам самый оптимальный для вашей ниши интернет магазин. С самыми эффективными решениями. Подключим CRM, 1С и многое другое.', img_src: 'public/img/cart.png', cost: 'от 500$'}]
+    section.section#price
+      h2.title.Fblack.align-center.container Цены на создание сайтов
+      ul.price
+        each product in products
+          li.price__productCard.productCard
+            .productCard__openInfo i
+            img.productCard__img(src=product.img_src alt=product.title)
+            h3.productCard__title= product.title
+            .productCard__cost= product.cost
+            .productCard__btn.openForm Заказать
+            .productCard__info.modalBg
+              .modalContent.Fwhite
+                .modalContent__close
+                dt.title.separator.separator_default.separator_white= product.title
+                dd.text= product.info
+    -
+     var works = [
+      {title: 'Flightcase', photo_src: 'data/portfolio/flightcase.jpg', long: false, category: 'visit-card'},
+      {title: 'CREDO Engineers', photo_src: 'data/portfolio/credo.jpg', long: true, category: 'corporate'},
+      {title: 'Kub-event', photo_src: 'data/portfolio/kub-event.jpg', long: true, category: 'visit-card'},
+      {title: 'Metal-montag', photo_src: 'data/portfolio/mm.jpg', long: false, category: 'visit-card'},
+      {title: 'Shkaf12', photo_src: 'data/portfolio/shkaf12.jpg', long: false, category: 'landing-page'}]
+    section#portfolio
+      .portfolio__picker.picker
+        .container
+          h2.picker__title.title.align-center Портфолио
+          ul
+            li.picker__category.picker__category_selected#album-all Все
+            li.picker__category#album-landings Landing page
+            li.picker__category#album-vitit-cards Сайт-визитка
+            li.picker__category#album-corporate Корпоративный сайт
+      .portfolio__mosaicAlbum.mosaicAlbum.clearfix
+        each work in works
+          .mosaicAlbum__Photo(class=work.long ? 'mosaicAlbum__Photo_long' : '' data-info=work.category)
+            .mosaicAlbum__photoIn
+              .mosaicAlbum__photoCont.coverable(style="background-image: url('" + work.photo_src + "')")
+
+    .clearfix#discounts
+      .section.SectionHalf.SectionHalf_G.col-xs-12.col-sm-12.col-md-6.col-lg-6
+        section.sectionHalf
+            .sectionHalf__content.clearfix
+              h2.sectionHalf__title.title.separator Наша система<br /> скидок
+              .sectionHalf__textGroup.textGroup
+                h3.textGroup__title Скидка 10%
+                p.text Поделитесь ссылкой на наш сайт и соберите 10 репостов (ретвитов) во Вконтакте, Facebook или Tweeter и получите скидку 10%
+              .sectionHalf__textGroup.textGroup
+                h3.textGroup__title Скидка 30%
+                p.text Закажите 2 сайта или приведите клиента и получите скидку 30%
+            -  var icons = ['vk', 'f', 't']
+              .sectionHalf__socials
+                each icon in icons
+                  .sectionHalf__socialIcon.socialIcon(class=icon)= icon
+      .section.SectionHalf.SectionHalf_P.hidden-xs.hidden-sm.col-md-6.col-lg-6
+        section.sectionHalf
+          .sectionHalf__content
+            h2.sectionHalf__title.title.separator Оставьте заявку<br /> прямо сейчас
+            p.text И мы свяжемся с вами, чтобы сэкономить ваше время
+          .sectionHalf__btn.btn.openForm ОСТАВИТЬ ЗАЯВКУ
+
+    section.section
+      .container
+        h2.title.Fblack.align-center 5 Шагов для идеального<br /> результата
+        ol.steps
+          li.Step
+            .step
+              .step__number 1
+              .step__content
+                h3.step__title.separator Планирование
+                p.text Оговариваем возможности, прикидываем общую концепцию, расчитываем стоимость сайта
+          li.Step
+            .step
+              .step__number 2
+              .step__content
+                h3.step__title.separator Проектирование
+                p.text Исследование вашего рынка, разработка макета будущего сайта, демонстрация макета сайта и внесение поправок по вашему желанию сайта
+          li.Step
+            .step
+              .step__number 3
+              .step__content
+                h3.step__title.separator Разработка
+                p.text Верстка и программирование сайта
+          li.Step
+            .step
+              .step__number 4
+              .step__content
+                h3.step__title.separator Сдача проекта
+                p.text Тестирование сайта, демонстация проделанной работы, загрузка сайта на хостинг
+          li.Step.step_warranty
+            .step
+              .step__number 5
+              .step__content
+                h3.step__title.separator Гарантия и поддержка
+                p.text Мы обязуемся всегда быть рядом на случай, если что-то пойдет не так, исправим любые возникнувшие проблемы в кротчайшие сроки
+
+    -
+     var users = [
+        {name: 'Кирилл', img_src: 'data/users/kiril.jpg', status: 'Руководитель компании Агенства маркетинговых сервисов «КУБ»', testimonial: 'Большое спасибо за сайт лялял тополя очень очень тудым сюдым офыва дл ывываллд дфытуда лалала потому что не так ляляля вылфао дл ывываллд дфытуда лалала потому что н дл ывываллд дфытуда лалала потому что н дл ывываллд дфытуда лалала потому что н'},
+        {name: 'Роман', img_src: 'data/users/kiril.jpg', status: 'Руководитель компании «Flightcase»', testimonial: 'В первую очередь хотелось бы выделить такую вещь как непредвиденные обстоятельста и насколько быстро мне помогала команда Webz выбираться из них ыфва фыва фыва фыва фыва фыва фыва фываф ываф  ывываллд дфытуда лалала потому что н'}]
+    section.section.testimonials.coverable#testimonials
+      .container
+        h2.title.Fblack.align-left Отзывы наших клиентов
+        .owl-carousel.owl-theme
+          each user in users
+            .testimonial
+              .testimonial__user.user
+                .user__img.coverable(style="background-image: url('" + user.img_src + "')")
+                .user__name= user.name
+                .user__status.text= user.status
+              .testimonial__text.text= user.testimonial
+
+    section.section
+      .container
+        h2.title.Fblack.align-left Наши контакты
+        .communication
+          .communication__part
+            .communication__info
+              .communication__img.communication__img_email
+              .communication__content
+                h3.communication__title Наш E-mail
+                a.communication__text.text(href="mailto:webz.sites@gmail.com") webz.sites.by@gmail.com
+            .communication__info
+              .communication__img.communication__img_phone
+              .communication__content
+                h3.communication__title Звонить сюда
+                a.communication__text.text(href="tel:+375333332447") +375 (33) 333 24 47
+                a.communication__text.text(href="tel:+375336756847") +375 (33) 675 68 47
+          .communication__part.communication__form
+            form(action="mail.php" method="POST").form.form_black.form_cmp
+              div.form__fields.clearfix
+                input.form__field(type="text" name="name" placeholder="Ваше имя" required)
+                input.form__field(type="text" name="email" placeholder="Ваш E-mail" required)
+              label.form__label Сообщение
+              textarea.form__tfield(name="message" required)
+              button.form__btn.btn.btn_black.btn_wp(type="submit" name="mail-request") ОСТАВИТЬ ЗАЯВКУ
+
+    #formPopup.modalBg
+      .modalContent
+        .modalContent__close
+        form(action="mail.php" method="POST").form.form_white.form_cmp
+          input(type="hidden" value="")
+          div.form__fields.clearfix
+            input.form__field(type="text" name="name" placeholder="Ваше имя" required)
+            input.form__field(type="text" name="email" placeholder="Ваш E-mail" required)
+          label.form__label Сообщение
+          textarea.form__tfield(name="message" required)
+          button.form__btn.btn.btn_white.btn_wp(type="submit" name="mail-request") ОСТАВИТЬ ЗАЯВКУ
+
+    #thanks.modalBg
+      .modalContent
+        .modalContent__close
+        .title.separator.separator_default.separator_white Спасибо за заявку!
+        .text Мы свяжемся с вами в ближайшее время.
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="libs/mask.min.js")
+    script(src="libs/owl-carousel/owl.carousel.min.js")
+    script(src="public/js/app.js")
