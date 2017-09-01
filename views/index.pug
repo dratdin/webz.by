@@ -9,18 +9,33 @@ html(lang="ru-Ru")
     link(rel="shortcut icon" href="public/img/five-icon.png" type="image/x-icon")
     link(rel="stylesheet" href="libs/bootstrap-grid-3.3.1.min.css")
     link(rel="stylesheet" href="public/css/app.css")
+    link(href="https://fonts.googleapis.com/css?family=Oswald:300,500&amp;subset=cyrillic" rel="stylesheet")
   body
     .Header.coverable
-      .hidden-sm.hidden-md.hidden-lg.Menu-btn.clearfix
-          .menu-btn
+      .hidden-sm.hidden-md.hidden-lg.MenuLine
+        input(type="checkbox" id="hmt").hidden.htm
+        label(for="hmt").btn-menu
+          span.btn-menu__line
+          span.btn-menu__line
+          span.btn-menu__line
+        nav.MobileMenu
+          ul.menu.menu_mobile
+            li.menu__item
+              a.menu__lnk(href="#price") ЦЕНЫ
+            li.menu__item
+              a.menu__lnk(href="#portfolio") ПОРТФОЛИО
+            li.menu__item
+              a.menu__lnk.menu__lnk_new(href="#discounts") СКИДКИ
+            li.menu__item
+              a.menu__lnk(href="#testimonials") ОТЗЫВЫ
+          .MobileContacts
+            .mobileContacts +375 (33) 333 24 47
+            .mobileContacts webz.sites.by@gmail.com
       .Header__container.container
         .Header__half
           .Header__intro
             .logo.separator WEBZ
-            h1.pageTitle разработка и создание<br /> сайтов в Минске
-            .hidden-sm.hidden-md.hidden-lg.MobileContacts
-              .mobileContacts +375 (33) 333 24 47
-              .mobileContacts webz.sites.by@gmail.com
+            h1.pageTitle Создание сайтов в Минске
             .Header__coverCheck.coverCheck
               .coverCheck__item Дешевле
               .coverCheck__item Качественнее
@@ -32,8 +47,8 @@ html(lang="ru-Ru")
                 a.menu__lnk(href="#price") ЦЕНЫ
               li.menu__item
                 a.menu__lnk(href="#portfolio") ПОРТФОЛИО
-              li.menu__item.menu__item_new
-                a.menu__lnk(href="#discounts") СКИДКИ
+              li.menu__item
+                a.menu__lnk.menu__lnk_new(href="#discounts") СКИДКИ
               li.menu__item
                 a.menu__lnk(href="#testimonials") ОТЗЫВЫ
           form.Header__form.form
@@ -63,7 +78,7 @@ html(lang="ru-Ru")
 
     -
      var products = [
-        {title: 'Landing Page', info: 'Это одностраничный сайт (так называемая посадочная страница), предназначенный для продажи одного товара или услуги. Преимуществом такого сайта является то, что он максимально раскрывает ваше уникальное торговое предложение. У лэндингов максимальная конверсия (зашел - оставил заявку). Вместе с разработкой лендинга мы БЕСПЛАТНО настраиваем контекстную рекламу', img_src: 'public/img/landing.svg', cost: 'от 120$'},
+        {title: 'Landing Page', info: 'Это одностраничный сайт (так называемая посадочная страница), предназначенный для продажи одного товара или услуги. Преимуществом такого сайта является то, что он максимально раскрывает ваше уникальное торговое предложение. У лэндингов максимальная конверсия (зашел - оставил заявку). Вместе с разработкой лендинга мы БЕСПЛАТНО настраиваем контекстную рекламу', img_src: 'public/img/landing.png', cost: 'от 120$'},
         {title: 'Сайт-визитка', info: 'Это небольшой сайт, чаще всего до 5 страниц. Содержащий основную информацию о компании, услуге, товаре. С прайс листами и контактной информацией. Как и все остальные сайты, сайты-визитки мы разрабатываем только с индивидуальным дизайном, что позволит даже по маленькому сайту выделить Вас среди конкурентов.', img_src: 'public/img/visit-card.png', cost: 'от 120$'},
         {title: 'Корпоративный сайт', info: 'Это большой полнофункциональный сайт, задачей которого является заявить о компании в интернете. Мы стараемся чтобы каждый сделанный нами сайт максимально точно раскрывал потенциал компании и повышал ее статус.', img_src: 'public/img/team.png', cost: 'от 300$'},
         {title: 'Интернет-магазин', info: 'Сайт с помощью которого Вы сможете продавать свои услуги и продукцию в интернете. Он продаёт Вашу продукцию 24/7. Обратитесь к нам и мы разработаем Вам самый оптимальный для вашей ниши интернет магазин. С самыми эффективными решениями. Подключим CRM, 1С и многое другое.', img_src: 'public/img/cart.png', cost: 'от 500$'}]
@@ -84,11 +99,11 @@ html(lang="ru-Ru")
                 dd.text= product.info
     -
      var works = [
-      {title: 'Flightcase', photo_src: 'data/portfolio/flightcase.jpg', long: false, category: 'visit-card'},
-      {title: 'CREDO Engineers', photo_src: 'data/portfolio/credo.jpg', long: true, category: 'corporate'},
-      {title: 'Kub-event', photo_src: 'data/portfolio/kub-event.jpg', long: true, category: 'visit-card'},
-      {title: 'Metal-montag', photo_src: 'data/portfolio/mm.jpg', long: false, category: 'visit-card'},
-      {title: 'Shkaf12', photo_src: 'data/portfolio/shkaf12.jpg', long: false, category: 'landing-page'}]
+      {title: 'Flightcase', description: 'Сайт-визитка для копании по производу кофров и рэковых кейсов, дизайн выполнен в соответсвии с тематикой.', url: 'flightcase.by', photo_src: 'data/portfolio/flightcase.jpg', long: false, category: 'visit-card'},
+      {title: 'CREDO Engineers', description: 'Корпоративный сайт для американской компании CREDO Engineers, которая занимается архитектурой и планировкой зданий. Сайт переведен на 2 языка, имеет удобную систему управления информацией о компании.', url: '', photo_src: 'data/portfolio/credo.jpg', long: true, category: 'corporate'},
+      {title: 'Kub-event', description: 'Сайт-каталог/сайт-визитка для event агентства. Основной упор на сайте был сделан на хорошее отображение альбомов мероприятий, а также удобную панель для управления альбомами.', url: 'kub-event.by', photo_src: 'data/portfolio/kub-event.jpg', long: true, category: 'visit-card'},
+      {title: 'Metal-montag', description: 'Компания Metal-montag занимается установкой и изделием металлоконструкций и основная цель стоящая перед нами - было создание сайта, на котором потенциальный клиент мог просмотреть кучу разных вариантов изделий из металла и подобрать что-то для себя.', url: 'metal-montag.by', photo_src: 'data/portfolio/mm.jpg', long: false, category: 'visit-card'},
+      {title: 'Shkaf12', description: 'shkaf12.by отличный пример того, для чего нужен Landing page. У компании есть одно конкретное предложение - они делают шкафы-купе с рассрочкой до 12 месяцев.', url: '', photo_src: 'data/portfolio/shkaf12.jpg', long: false, category: 'landing-page'}]
     section#portfolio
       .portfolio__picker.picker
         .container
@@ -100,9 +115,15 @@ html(lang="ru-Ru")
             li.picker__category#album-corporate Корпоративный сайт
       .portfolio__mosaicAlbum.mosaicAlbum.clearfix
         each work in works
-          .mosaicAlbum__Photo(class=work.long ? 'mosaicAlbum__Photo_long' : '' data-info=work.category)
-            .mosaicAlbum__photoIn
-              .mosaicAlbum__photoCont.coverable(style="background-image: url('" + work.photo_src + "')")
+          div
+            .mosaicAlbum__Photo(class=work.long ? 'mosaicAlbum__Photo_long' : '' data-info=work.category)
+              .mosaicAlbum__photoIn
+                .mosaicAlbum__photoCont.coverable(style="background-image: url('" + work.photo_src + "')")
+            .mosaicAlbum__Description.modalBg
+              .modalContent.Fwhite
+                .modalContent__close
+                h3.title.separator.separator_default.separator_white= work.title
+                p.text= work.description
 
     .clearfix#discounts
       .section.SectionHalf.SectionHalf_G.col-xs-12.col-sm-12.col-md-6.col-lg-6
@@ -115,10 +136,10 @@ html(lang="ru-Ru")
               .sectionHalf__textGroup.textGroup
                 h3.textGroup__title Скидка 30%
                 p.text Закажите 2 сайта или приведите клиента и получите скидку 30%
-            -  var icons = ['vk', 'f', 't']
-              .sectionHalf__socials
-                each icon in icons
-                  .sectionHalf__socialIcon.socialIcon(class=icon)= icon
+            .sectionHalf__socials.clearfix
+              a(href="https://vk.com/share.php?url=http://webz.by" target="_blank").sectionHalf__socialIcon.socialIcon vk
+              .sectionHalf__socialIcon.socialIcon.socialIcon_f f
+              .sectionHalf__socialIcon.socialIcon.socialIcon_t t
       .section.SectionHalf.SectionHalf_P.hidden-xs.hidden-sm.col-md-6.col-lg-6
         section.sectionHalf
           .sectionHalf__content
@@ -163,8 +184,7 @@ html(lang="ru-Ru")
 
     -
      var users = [
-        {name: 'Кирилл', img_src: 'data/users/kiril.jpg', status: 'Руководитель компании Агенства маркетинговых сервисов «КУБ»', testimonial: 'Большое спасибо за сайт лялял тополя очень очень тудым сюдым офыва дл ывываллд дфытуда лалала потому что не так ляляля вылфао дл ывываллд дфытуда лалала потому что н дл ывываллд дфытуда лалала потому что н дл ывываллд дфытуда лалала потому что н'},
-        {name: 'Роман', img_src: 'data/users/kiril.jpg', status: 'Руководитель компании «Flightcase»', testimonial: 'В первую очередь хотелось бы выделить такую вещь как непредвиденные обстоятельста и насколько быстро мне помогала команда Webz выбираться из них ыфва фыва фыва фыва фыва фыва фыва фываф ываф  ывываллд дфытуда лалала потому что н'}]
+        {name: 'Роман', img_src: 'data/users/Roma.jpg', status: 'Руководитель компании «Flightcase»', testimonial: 'Огромное спасибо за разработку сайта! Все стильно и практично. Всем советую. Не прогадаете!'}]
     section.section.testimonials.coverable#testimonials
       .container
         h2.title.Fblack.align-left Отзывы наших клиентов
@@ -183,18 +203,18 @@ html(lang="ru-Ru")
         .communication
           .communication__part
             .communication__info
-              .communication__img.communication__img_email
+              .communication__img.communication__img_email.sprite
               .communication__content
                 h3.communication__title Наш E-mail
                 a.communication__text.text(href="mailto:webz.sites@gmail.com") webz.sites.by@gmail.com
             .communication__info
-              .communication__img.communication__img_phone
+              .communication__img.communication__img_phone.sprite
               .communication__content
                 h3.communication__title Звонить сюда
                 a.communication__text.text(href="tel:+375333332447") +375 (33) 333 24 47
                 a.communication__text.text(href="tel:+375336756847") +375 (33) 675 68 47
           .communication__part.communication__form
-            form(action="mail.php" method="POST").form.form_black.form_cmp
+            form.form.form_black.form_cmp
               div.form__fields.clearfix
                 input.form__field(type="text" name="name" placeholder="Ваше имя" required)
                 input.form__field(type="text" name="email" placeholder="Ваш E-mail" required)
@@ -205,7 +225,7 @@ html(lang="ru-Ru")
     #formPopup.modalBg
       .modalContent
         .modalContent__close
-        form(action="mail.php" method="POST").form.form_white.form_cmp
+        form.form.form_white.form_cmp
           input(type="hidden" value="")
           div.form__fields.clearfix
             input.form__field(type="text" name="name" placeholder="Ваше имя" required)
@@ -217,10 +237,11 @@ html(lang="ru-Ru")
     #thanks.modalBg
       .modalContent
         .modalContent__close
-        .title.separator.separator_default.separator_white Спасибо за заявку!
-        .text Мы свяжемся с вами в ближайшее время.
+        .title.Fwhite.separator.separator_default.separator_white Спасибо за заявку!
+        .text.Fwhite Мы свяжемся с вами в ближайшее время.
 
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
     script(src="libs/mask.min.js")
     script(src="libs/owl-carousel/owl.carousel.min.js")
+    script(src="libs/fontfaceobserver.js")
     script(src="public/js/app.js")

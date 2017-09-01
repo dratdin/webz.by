@@ -13,18 +13,67 @@ $Fdgray: #666;
 $lpink: #fbeff0;
 $pink: #FF2B74;
 
+@font-face {
+  font-family: 'Panton';
+  font-weight: bold;
+  src: local('Panton'),
+       url('../fonts/Panton/Panton-BlackCaps.woff') format('woff'),
+       url('../fonts/Panton/Panton-BlackCaps.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Panton';
+  font-weight: 100;
+  src: local('Panton'),
+       url('../fonts/Panton/Panton-LightCaps.woff2') format('woff2'),
+       url('../fonts/Panton/Panton-LightCaps.woff') format('woff'),
+       url('../fonts/Panton/Panton-LightCaps.ttf') format('ttf'),
+       url('../fonts/Panton/Panton-LightCaps.eot') format('eot'),;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-weight: 300;
+  src: local('Oswald'),
+       url('../fonts/Oswald/Oswald-Light.woff2') format('woff2'),
+       url('../fonts/Oswald/Oswald-Light.woff') format('woff'),
+       url('../fonts/Oswald/Oswald-Light.ttf') format('ttf'),
+       url('../fonts/Oswald/Oswald-Light.eot') format('eot'),;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-weight: 500;
+  src: local('Oswald'),
+       url('../fonts/Oswald/Oswald-Regular.woff2') format('woff2'),
+       url('../fonts/Oswald/Oswald-Regular.woff') format('woff'),
+       url('../fonts/Oswald/Oswald-Regular.ttf') format('ttf'),
+       url('../fonts/Oswald/Oswald-Regular.eot') format('eot'),;
+}
+
+.sprite {
+  background-image: url('../img/sprite.png');
+  background-repeat: no-repeat;
+}
+
 body {
   background-color: #fff;
-  font-family: 'Oswald', Verdana, sans;
+  font-family: Verdana, sans;
   font-size: 17px;
   color: $FblackL;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.3}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .text {
   line-height: 1.55;
   font-size: 17px;
   letter-spacing: 1px;
+  text-transform: none;
   @media(max-width : 768px) {font-size: 15px;}}
 
 .coverable { background-size: cover;background-position: 50% 50%}
@@ -58,6 +107,7 @@ body {
   padding: 0 0 25px 0;
   height: 100vh;
   min-height: 640px;
+  overflow: hidden;
   background-image: url("../img/HeadCover.jpg");
   font-size: 0;
   @media(max-width : 992px) {min-height: 580px;}
@@ -126,50 +176,110 @@ body {
 
   &__coverCheck {
     margin-top: 100px;
-    @media(max-width : 768px) {
-      margin-top: 30px;
-    }
+    @media(max-width : 768px) {margin-top: 30px;}
   }
 
   &__intro {
     width: 285px;
     margin: 0 auto;
-    margin-top: 70px}}
+    margin-top: 70px;
+    @media(max-width : 768px) {margin-top: 100px}}}
 
 .MobileContacts {
-  margin-top: 35px;
-  padding: 15px;
-  border: 2px solid #aaa;
-  background: rgba(230, 80, 147, 0.35);
+  padding: 10px;
+  border-bottom: 2px solid #888;
+  border-top: 2px solid #888;
 }
 
 .mobileContacts {
-  font-size: 19px;
-  color: #fff;
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 10px;
 }
 
-.Menu-btn  {
-  position: relative;
+.MenuLine  {
+  position: fixed;
   display: block;
-  background: rgba(230, 80, 147, 0.35);
-  z-index: 2;
+  height: 64px; width: 100%;
+  background: rgba(230, 80, 147, 0.8);
+  z-index: 100;
   border-bottom: 2px solid #aaa;
 }
 
-.menu-btn {
-  float: right;
+.btn-menu {
+  position: fixed;
+  right: 10px;
   width: 64px;
   height: 64px;
-  background: url('../img/menuBtn.png') 50% 50% no-repeat;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+  transition: 230ms;
+  z-index: 200;
+  transform: translateZ(0);
+
+  &__line {
+    position: relative;
+    display: block;
+    height: 5px;
+    background-color: #fff;
+    margin: 10px 0 0;
+    transition: all 100ms linear 230ms;
+  }
+}
+
+.MobileMenu {
+  position: fixed;
+  display: block;
+  transform: translateZ(0);
+  width: 220px;
+  right: -220px; top: 0;
+  height: 100vh;
+  transition: left .2s;
+  background: #fbeff0;
+  z-index: 100;
+}
+
+#hmt:checked ~ .MobileMenu {
+  right: 0;
+}
+#hmt:checked ~ .btn-menu {background: #e65093;}
+#hmt:checked ~ .btn-menu .btn-menu__line:nth-child(1) {
+  transform: rotate(45deg);
+  top: 16px;
+}
+#hmt:checked ~ .btn-menu .btn-menu__line:nth-child(2) {
+  opacity: 0;
+}
+#hmt:checked ~ .btn-menu .btn-menu__line:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -14px;
+}
+
+.menu_mobile {
+  flex-wrap: wrap;
+  padding: 23px 10px 10px;
+
+  .menu__item {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .menu__lnk {
+    font-size: 23px;
+    color: #555;
+  }
+
+  .menu__lnk_new::before {
+    top: -5px;
+    right: -38px;
+  }
 }
 
 .menu {
   display: flex;
   justify-content: space-between;
-
-  @media(max-width : 768px) {
-    display: none;
-  }
 
   &__item {display: inline-block}
 
@@ -178,31 +288,28 @@ body {
     color: #fff;
     transition: 100ms;
     text-transform: uppercase;
-    font-family: 'Oswald', Verdana, sans;
-    font-weight: 400;
+    font-weight: 500;
     @media(max-width : 992px) {font-size: 15px;}
 
     &:hover {
       border-bottom: 4px solid #ff2b74;
       transition: 100ms}}
 
-  &__item_new {
+  &__lnk_new {
     position: relative;
 
     &::before {
       content: 'НОВОЕ';
       position: absolute;
       top: -23px; right: -30px;
-      font-weight: 100;
+      font-weight: 300;
       background-color: #FF2B74;
       padding: 2px 1px;
       font-size: 13px;
       color: #fff}}}
 
 .form {
-  font-family: 'Oswald', Verdana, sans;
   letter-spacing: 1px;
-  font-weight: 100;
   font-size: 17px;
   text-transform: none;
 
@@ -219,7 +326,8 @@ body {
     margin-bottom: 15px;}
 
   label {
-    font-family: 'Panton', Arial, sans-serif;
+    // font-family: 'Panton', Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 13px;
   }
 
@@ -233,6 +341,7 @@ body {
   ::placeholder {
     font-size: 13px;
     color: #ccc;
+    font-family: Arial, sans-serif;
     font-family: 'Panton', Arial, sans-serif}
 }
 
@@ -276,15 +385,13 @@ body {
 }
 
 .btn {
-  font-family: 'Oswald', Verdana, sans;
   padding: 13px 30px;
   border: 2px solid #fefefe;
   color: #fff;
-  font-weight: bold;
   background-color: transparent;
   letter-spacing: 1px;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 300;
   transition: 300ms;
   text-transform: uppercase;
   cursor: pointer;
@@ -315,9 +422,7 @@ body {
   &__item {
     display: block;
     margin-bottom: 15px;
-    color: #ddd;
-    font-weight: 100;
-    font-family: 'Oswald', Verdana, sans}}
+    color: #ddd;}}
 
 .separator {
   position: relative;
@@ -332,7 +437,7 @@ body {
   &::after {
     bottom: -30px;
     border-bottom: 2px solid transparent;
-  @media(max-width : 768px) {bottom: -15px;}}
+  @media(max-width : 992px) {bottom: -15px;}}
 }
 
 .separator_white {
@@ -342,7 +447,8 @@ body {
 
 .logo {
   margin: 0 0 40px 0;
-  font-family: 'Panton', Arial, sans-serif;
+  // font-family: 'Panton', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: bold;
   font-size: 105px;
   line-height: 1;
@@ -356,13 +462,11 @@ body {
 
 
 .pageTitle {
-  font-family: 'Oswald', Verdana, sans;
   color: #fff;
   font-size: 28px;
-  font-weight: 100;
   line-height: 1.1;
   @media(max-width : 992px) {font-size: 25px;}
-  @media(max-width : 768px) {font-size: 23px;}}
+  @media(max-width : 768px) {font-size: 23px;margin-bottom: 60px}}
 
 .coverCheck {
 
@@ -370,7 +474,6 @@ body {
     color: #eee;
     text-transform: uppercase;
     font-size: 25px;
-    font-weight: 100;
     margin-bottom: 15px;
     vertical-align: middle;
     @media(max-width : 992px) {font-size: 22px;}
@@ -387,6 +490,7 @@ body {
       border: 1px solid #eee;
       border-radius: 100px;
       line-height: 1.15;
+      background: rgba(230, 80, 147, 0.35);
       @media(max-width : 992px) {
         width: 30px;
         height: 30px;
@@ -443,7 +547,6 @@ body {
   padding: 70px 0 0 0;
   border: 5px solid #666;
   text-transform: uppercase;
-  font-weight: 100;
   font-size: 21px;
 
   @media(max-width : 1100px) {
@@ -530,11 +633,10 @@ body {
   margin: 0 10px 25px 10px;
   padding-top: 25px;
   max-width: 340px;
-  height: 530px;
+  min-height: 550px;
   background-color: #FFF;
   border: 1px solid #D04A6D;
   text-align: center;
-  font-family: 'Oswald', Verdana, sans;
   @media(max-width : 1050px) { max-width: 310px; }
   @media(max-width : 768px) { padding-top: 8px; }
 
@@ -549,7 +651,7 @@ body {
     border-bottom: 1px solid #D8E5E5;
     font-size: 19px;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
     color: $FblackL;
     text-align: left;
     @media(max-width : 1050px) {
@@ -565,7 +667,6 @@ body {
     color: $FblackL;
     text-align: left;
     font-size: 16px;
-    font-weight: 100;
     text-transform: none;
     line-height: 1.6;
     @media(max-width : 1050px) {
@@ -589,7 +690,6 @@ body {
     display: inline-block;
     text-transform: uppercase;
     color: #eac3d1;
-    font-weight: 100;
     font-size: 20px;
     margin-right: 20px;
     cursor: pointer;
@@ -610,10 +710,15 @@ body {
   padding-top: 1.5%;
   padding-bottom: 1.5%;
   &__Photo {
+    position: relative;
     float: left;
     width: 22%;
     margin: 1.5%;
-    @media(max-width : 768px) {width: 47%}}
+    cursor: pointer;
+    transition: 200ms;
+    @media(max-width : 768px) {width: 47%}
+
+    &:hover {transform: scale(1.05);cursor: pointer;}}
 //641.088 - long item height
 //300.52 - short item height
   &__Photo_long {
@@ -624,7 +729,7 @@ body {
   &__photoIn {
     position: relative;
     height: 0;
-    padding-bottom: 100%}
+    padding-bottom: 100%;}
 
   &__photoCont {
     position: absolute;
@@ -704,7 +809,7 @@ $SectionHalfG: #FF2B74;
   &__title {
     text-transform: uppercase;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 13px}}
 
 .socialIcon {
@@ -760,7 +865,8 @@ $SectionHalfG: #FF2B74;
     display: inline-block;
     vertical-align: top;
     margin-right: 20px;
-    font-family: 'Panton';
+    // font-family: 'Panton', Arial;
+    font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 120px;
     color: $pink;
@@ -770,7 +876,7 @@ $SectionHalfG: #FF2B74;
 
   &__title {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 40px;
     color: $FblackL;
@@ -783,10 +889,26 @@ $SectionHalfG: #FF2B74;
     color: $FblackL;}}
 
 .step_warranty {
+  position: relative;
   width: auto;
   padding-top: 50px;
-  background: url('../img/sawLine.png') 50% top no-repeat,
-  url('../img/medal.png') right 40px no-repeat;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0; left: 0;
+    width: 100%;
+    height: 30px;
+    background: url('../img/sprite.png') -10px -10px no-repeat;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 40px; right: 0;
+    width: 64px; height: 64px;
+    background: url('../img/sprite.png') -10px -60px no-repeat;
+  }
 
   .step__content {
     max-width: 350px;}}
@@ -839,7 +961,7 @@ $SectionHalfG: #FF2B74;
       position: absolute;
       left: -23px; bottom: 13.5px;
       height: 23px; width: 23px;
-      background: url('../img/triangle.png') no-repeat;
+      background: url('../img/sprite.png') -237px -60px;
       @media(max-width : 768px) {display: none}}}}
 
 .user {
@@ -886,8 +1008,8 @@ $SectionHalfG: #FF2B74;
     margin-right: 20px;
     background-repeat: no-repeat;}
 
-  &__img_email {background-image: url('../img/mail.png')}
-  &__img_phone {background-image: url('../img/phone.png')}
+  &__img_email {background-position: -168px -60px;}
+  &__img_phone {background-position: -94px -60px;}
 
   &__title {
     text-transform: uppercase;
@@ -971,7 +1093,7 @@ $SectionHalfG: #FF2B74;
 
 .modalContent {
   border: 2px solid rgba(255, 38, 112, 0.72);
-  background: rgba(0,0,0,.3);
+  background: rgba(0,0,0,.5);
   display: inline-block;
   max-width: 700px;
   width: 100%;
@@ -986,16 +1108,12 @@ $SectionHalfG: #FF2B74;
   &__close {
     position: absolute;
     top: 15px; right: 15px;
-    height: 32px;
-    width: 32px;
-    background-image: url("../img/cancelW.svg");
-    background-size: contain;
+    height: 32px; width: 32px;
+    background: url('../img/sprite.png') -62px -144px;
     cursor: pointer;
-    transition: 0.4s;
 
     &:hover {
-      background-image: url("../img/cancelP.svg");
-      transition: 0.4s;
+      background: url('../img/sprite.png') -10px -144px;
     }
   }
 }
