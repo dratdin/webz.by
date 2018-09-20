@@ -98,10 +98,10 @@ $(document).ready(function() {
 
   var shareTitle = 'Webz.by - Разработка и создание сайтов.',
   shareDescription = 'Исследование вашего рынка и конкурентов, уникальный дизайн и гарантия. Цены ниже рыночных, имеется система скидок, если хотите еще девешле!',
-  shareImgPath = '../img/five-icon.png',
+  shareImgPath = '../img/logoWebz.png',
   siteUrl = 'webz.by';
-  $('.f').click(function() {Share.facebook(siteUrl,shareTitle,shareImgPath,shareDescription)});
-  $('.t').click(function() {Share.twitter(siteUrl,shareTitle)});
+  $('.facebook').click(function() {Share.facebook(siteUrl,shareTitle,shareImgPath,shareDescription)});
+  $('.tweeter').click(function() {Share.twitter(siteUrl,shareTitle)});
 
   $("form").submit(function() {
     var form = $(this);

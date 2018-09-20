@@ -5,6 +5,14 @@ html(lang="ru-Ru")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
     title Создание сайтов Минск. Система скидок и поддержка!
     meta(name="description" content="Разработка сайтов любой сложности. Наши цены гораздо ниже рыночных, а система скидок позволяет сэкономить вам еще больше денег. Создание сайтов с нуля, под ключ и их последующие продвижение")
+    meta(property="image" content="http://webz.by/public/img/logoSocials.png")
+
+    meta(property="og:type" content="website")
+    meta(property="og:url" content="webz.by")
+    meta(property="og:title" content="Создание сайтов Минск. Система скидок и поддержка!")
+    meta(property="og:description" content="Разработка сайтов любой сложности. Наши цены гораздо ниже рыночных, а система скидок позволяет сэкономить вам еще больше денег. Создание сайтов с нуля, под ключ и их последующие продвижение")
+    meta(property="og:image" content="http://webz.by/public/img/logoSocials.png")
+    meta(name="yandex-verification" content="2a0a184c9fd479f4")
 
     link(rel="shortcut icon" href="public/img/five-icon.png" type="image/x-icon")
     link(rel="stylesheet" href="libs/bootstrap-grid-3.3.1.min.css")
@@ -29,7 +37,7 @@ html(lang="ru-Ru")
             li.menu__item
               a.menu__lnk(href="#testimonials") ОТЗЫВЫ
           .MobileContacts
-            .mobileContacts +375 (33) 333 24 47
+            .mobileContacts +375 (29) 825 76 79
             .mobileContacts webz.sites.by@gmail.com
       .Header__container.container
         .Header__half
@@ -58,8 +66,8 @@ html(lang="ru-Ru")
             button.form__btn.btn.btn_wp(type="submit" name="mail-request") ОСТАВИТЬ ЗАЯВКУ
           .Header__contacts.contacts
             .contacts__group
-              a.contacts__item(href="tel:+375333332447") +375 (33) 333 24 47
-              a.contacts__item(href="tel:+375336756847") +375 (33) 675 68 47
+              a.contacts__item(href="tel:+375298257679") +375 (29) 825 76 79
+              a.contacts__item(href="tel:+375447320763") +375 (44) 732 07 63
             .contacts__group
               a.contacts__item(href="mailto:webz.sites.by@gmail.com") webz.sites.by@gmail.com
     -
@@ -78,8 +86,8 @@ html(lang="ru-Ru")
 
     -
      var products = [
-        {title: 'Landing Page', info: 'Это одностраничный сайт (так называемая посадочная страница), предназначенный для продажи одного товара или услуги. Преимуществом такого сайта является то, что он максимально раскрывает ваше уникальное торговое предложение. У лэндингов максимальная конверсия (зашел - оставил заявку). Вместе с разработкой лендинга мы БЕСПЛАТНО настраиваем контекстную рекламу', img_src: 'public/img/landing.png', cost: 'от 120$'},
-        {title: 'Сайт-визитка', info: 'Это небольшой сайт, чаще всего до 5 страниц. Содержащий основную информацию о компании, услуге, товаре. С прайс листами и контактной информацией. Как и все остальные сайты, сайты-визитки мы разрабатываем только с индивидуальным дизайном, что позволит даже по маленькому сайту выделить Вас среди конкурентов.', img_src: 'public/img/visit-card.png', cost: 'от 120$'},
+        {title: 'Сайт-визитка', info: 'Это небольшой сайт, чаще всего до 4 страниц. Содержащий основную информацию о компании, услуге, товаре. С прайс листами и контактной информацией. Как и все остальные сайты, сайты-визитки мы разрабатываем только с индивидуальным дизайном, что позволит даже по маленькому сайту выделить Вас среди конкурентов.', img_src: 'public/img/visit-card.png', cost: 'от 100$'},
+        {title: 'Landing Page', info: 'Это одностраничный сайт (так называемая посадочная страница), предназначенный для продажи одного товара или услуги. Преимуществом такого сайта является то, что он максимально раскрывает ваше уникальное торговое предложение. У лэндингов максимальная конверсия (зашел - оставил заявку). Вместе с разработкой лендинга мы БЕСПЛАТНО настраиваем контекстную рекламу', img_src: 'public/img/landing.png', cost: 'от 190$'},
         {title: 'Корпоративный сайт', info: 'Это большой полнофункциональный сайт, задачей которого является заявить о компании в интернете. Мы стараемся чтобы каждый сделанный нами сайт максимально точно раскрывал потенциал компании и повышал ее статус.', img_src: 'public/img/team.png', cost: 'от 300$'},
         {title: 'Интернет-магазин', info: 'Сайт с помощью которого Вы сможете продавать свои услуги и продукцию в интернете. Он продаёт Вашу продукцию 24/7. Обратитесь к нам и мы разработаем Вам самый оптимальный для вашей ниши интернет магазин. С самыми эффективными решениями. Подключим CRM, 1С и многое другое.', img_src: 'public/img/cart.png', cost: 'от 500$'}]
     section.section#price
@@ -95,15 +103,16 @@ html(lang="ru-Ru")
             .productCard__info.modalBg
               .modalContent.Fwhite
                 .modalContent__close
-                dt.title.separator.separator_default.separator_white= product.title
-                dd.text= product.info
+                h3.title.separator.separator_default.separator_white= product.title
+                p.text= product.info
     -
      var works = [
-      {title: 'Flightcase', description: 'Сайт-визитка для копании по производу кофров и рэковых кейсов, дизайн выполнен в соответсвии с тематикой.', url: 'flightcase.by', photo_src: 'data/portfolio/flightcase.jpg', long: false, category: 'visit-card'},
-      {title: 'CREDO Engineers', description: 'Корпоративный сайт для американской компании CREDO Engineers, которая занимается архитектурой и планировкой зданий. Сайт переведен на 2 языка, имеет удобную систему управления информацией о компании.', url: '', photo_src: 'data/portfolio/credo.jpg', long: true, category: 'corporate'},
-      {title: 'Kub-event', description: 'Сайт-каталог/сайт-визитка для event агентства. Основной упор на сайте был сделан на хорошее отображение альбомов мероприятий, а также удобную панель для управления альбомами.', url: 'kub-event.by', photo_src: 'data/portfolio/kub-event.jpg', long: true, category: 'visit-card'},
-      {title: 'Metal-montag', description: 'Компания Metal-montag занимается установкой и изделием металлоконструкций и основная цель стоящая перед нами - было создание сайта, на котором потенциальный клиент мог просмотреть кучу разных вариантов изделий из металла и подобрать что-то для себя.', url: 'metal-montag.by', photo_src: 'data/portfolio/mm.jpg', long: false, category: 'visit-card'},
-      {title: 'Shkaf12', description: 'shkaf12.by отличный пример того, для чего нужен Landing page. У компании есть одно конкретное предложение - они делают шкафы-купе с рассрочкой до 12 месяцев.', url: '', photo_src: 'data/portfolio/shkaf12.jpg', long: false, category: 'landing-page'}]
+      {title: 'CREDO Engineers', description: '(Сайт в процессе разработки) Корпоративный сайт для американской компании CREDO Engineers, которая занимается архитектурой и планировкой зданий. Сайт переведен на 2 языка, имеет удобную систему управления информацией о компании.', url: 'http://credo-engineers.com', photo_src: 'data/portfolio/credo.jpg', long: true, category: 'corporate'},
+      {title: 'Kub-event', description: 'Сайт-каталог/сайт-визитка для event агентства. Основной упор на сайте был сделан на хорошее отображение альбомов мероприятий, а также удобную панель для управления альбомами.', url: 'http://kub-event.by', photo_src: 'data/portfolio/kub-event.jpg', long: true, category: 'corporate'},
+      {title: 'RD-Service', description: 'RD-service - Профессиональный ремонт автомобилей. Сайт выполнен по всем правилам правильного лендинга, благодаря чему имеет высокую конверсию, а клиент получает моментально SMS-оповещение на телефон, как только кто-нибудь оставляет заявку на сайте!', url: 'http://www.rd-service.by/', photo_src: 'data/portfolio/rd-logow.jpg', long: false, category: 'landing-page'},
+      {title: 'Instup', description: 'Продвижение бизнеса или личности в инстаграме. Современный дизайн в цветах тематики и возможность отслеживать онлайн над чем работает компания.', url: 'http://www.instup.by/', photo_src: 'data/portfolio/instup-logo.jpg', long: false, category: 'landing-page'},
+      {title: 'Flightcase', description: 'Сайт-визитка для копании по производу кофров и рэковых кейсов, дизайн выполнен в соответсвии с тематикой.', url: 'http://flightcase.by', photo_src: 'data/portfolio/flightcase.jpg', long: false, category: 'visit-card'},
+      {title: 'Metal-montag', description: 'Компания Metal-montag занимается установкой и изделием металлоконструкций и основная цель стоящая перед нами - было создание сайта, на котором потенциальный клиент мог просмотреть кучу разных вариантов изделий из металла и подобрать что-то для себя.', url: 'http://metal-montaj.herokuapp.com', photo_src: 'data/portfolio/mm.jpg', long: false, category: 'visit-card'}]
     section#portfolio
       .portfolio__picker.picker
         .container
@@ -123,6 +132,8 @@ html(lang="ru-Ru")
               .modalContent.Fwhite
                 .modalContent__close
                 h3.title.separator.separator_default.separator_white= work.title
+                  a.title__wLink.wLink(href=work.url target="_blank")
+                    img(src="public/img/link.png")
                 p.text= work.description
 
     .clearfix#discounts
@@ -138,8 +149,8 @@ html(lang="ru-Ru")
                 p.text Закажите 2 сайта или приведите клиента и получите скидку 30%
             .sectionHalf__socials.clearfix
               a(href="https://vk.com/share.php?url=http://webz.by" target="_blank").sectionHalf__socialIcon.socialIcon vk
-              .sectionHalf__socialIcon.socialIcon.socialIcon_f f
-              .sectionHalf__socialIcon.socialIcon.socialIcon_t t
+              .sectionHalf__socialIcon.socialIcon.facebook f
+              .sectionHalf__socialIcon.socialIcon.tweeter t
       .section.SectionHalf.SectionHalf_P.hidden-xs.hidden-sm.col-md-6.col-lg-6
         section.sectionHalf
           .sectionHalf__content
@@ -184,7 +195,9 @@ html(lang="ru-Ru")
 
     -
      var users = [
-        {name: 'Роман', img_src: 'data/users/Roma.jpg', status: 'Руководитель компании «Flightcase»', testimonial: 'Огромное спасибо за разработку сайта! Все стильно и практично. Всем советую. Не прогадаете!'}]
+        {name: 'Кирилл', img_src: 'data/users/Kirill.jpg' , status: 'Руководитель ООО Агентство маркетинговых сервисов «КУБ»', testimonial: 'ООО Агентство маркетинговых сервисов КУБ благодарит студию «WEBZ» за хорошо проделанную работу по созданию нового сайта kub-event.by, а также за внимательное отношение ко всем пожеланиям, которые поступали в процессе выполнения заказа. Поставленные задачи были выполнены студией профессионально и в полном соответствии с ожиданиями.'},
+        {name: 'Роман', img_src: 'data/users/Roma.jpg', status: 'Руководитель компании «Flightcase»', testimonial: 'Огромное спасибо за разработку сайта! Все стильно и практично. Всем советую. Не прогадаете!'}
+        ]
     section.section.testimonials.coverable#testimonials
       .container
         h2.title.Fblack.align-left Отзывы наших клиентов
@@ -211,8 +224,8 @@ html(lang="ru-Ru")
               .communication__img.communication__img_phone.sprite
               .communication__content
                 h3.communication__title Звонить сюда
-                a.communication__text.text(href="tel:+375333332447") +375 (33) 333 24 47
-                a.communication__text.text(href="tel:+375336756847") +375 (33) 675 68 47
+                a.communication__text.text(href="tel:+375298257679") +375 (29) 825 76 79
+                a.communication__text.text(href="tel:+375447320763") +375 (44) 732 07 63
           .communication__part.communication__form
             form.form.form_black.form_cmp
               div.form__fields.clearfix
